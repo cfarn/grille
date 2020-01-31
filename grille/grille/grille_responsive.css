@@ -98,9 +98,9 @@ body {
 
 /* petites tablettes */
 @media (min-width: 321px) and (max-width: 767px) {
-    body {
-        /* background: #B18B45; */
-    }
+    /* body {
+        background: #B18B45;
+    } */
             
     .conteneur {
         width: 100%;
@@ -125,9 +125,9 @@ body {
 
 /* tablettes et ordinateurs portables */
 @media (min-width: 768px) and (max-width: 1096px) {
-    body {
-        /* background: #2e20e7; */
-    }
+    /* body {
+        background: #2e20e7;
+    } */
 
     .conteneur {
         width: 100%;
