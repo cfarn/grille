@@ -4,18 +4,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Page responsive</title>
+        <title>Page slider expériences</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <!-- feuille de style avec des medias queries pour le responsive -->
-        <link rel="stylesheet" href="grille_responsive.css">
+        <link rel="stylesheet" href="css/grille_slider.css">
     </head>
     <body>
         <div class="conteneur">
             <header class="row">
                 <!-- ranger les classes dans l'ordre de présentation des écrans (ex. du + petit au + grand) -->
                 <div class="marge-xsm col-xsm-12 col-10 marge-1">
-                    <h1>Site responsive - media queries</h1>
-                    <p>Ma 1ère page responsive</p>
+                    <h1>La Montagne</h1>
                 </div>
             </header>
             <section class="row">
@@ -31,8 +30,51 @@
                     <h2>3/ Titre de niveau 2</h2>
                     <p>3/ Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum quis temporibus molestias veritatis dicta consequatur sunt voluptates harum, expedita corporis ipsam, vel eligendi libero minima odit nulla omnis suscipit.</p>
                 </div>
-                <!-- fin section centrale avec 1 rangée -->
+                <!-- fin section 1 avec 1 rangée -->
             </section>
+            <section class="row">
+                <!-- rangée 2 -->
+                <div class="col-2">
+                    <p>1/ Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <!-- rangée 10 -->
+                <!-- méthode 1 -->
+                <!-- <div class="col-10">
+                    <img src="img2/Dolomites01.jpg" alt="Montagne" id="Montagne">
+                    <script>
+                        var slide = new Array("img/Dolomites01", "img/Dolomites02.jpg", "img/Dolomites03.jpg", "img/Dolomites04.jpg");
+                        var img2 = 0;
+                        function f() {
+                            img2 += 1;
+                            Montagne.setAttribute("src", "img2/" + img2 + ".jpg");
+                            if (img2 == "Dolomites04") {
+                                clearInterval(timer)
+                            }
+                        }
+                        var timer = window.setInterval('f()', 2000);
+                    </script>
+                </div> -->
+
+                <div class="col-10">
+                    <img src="img/Dolomites01.jpg" alt="Montagne" id="Montagne">
+                    <div id="precedent" onclick="ChangeSlide(-1)"><</div>
+                    <div id="suivant" onclick="ChangeSlide(1)">></div>
+                    <script>
+                        var slide = new Array("img/Dolomites01.jpg", "img/Dolomites02.jpg", "img/Dolomites03.jpg", "img/Dolomites04.jpg");
+                        var numero = 0;
+                        
+                        function ChangeSlide(sens) {
+                        numero = numero + sens;
+                        if (numero < 0) numero=slide.length - 1; if (numero> slide.length - 1)
+                            numero = 0;
+                            document.getElementById("slide").src = slide[numero];
+                            }
+                    </script>
+                    <!-- https://lesdocs.fr/slider-javascript/ -->
+                </div>
+                <!-- fin section 2 -->
+            </section>
+
             <footer class="row vert">
                 <div class="col-xsm-12 col-6">
                     <h3>1/ Footer gauche</h3>

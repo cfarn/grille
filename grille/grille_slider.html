@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Page slider</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <!-- feuille de style avec des medias queries pour le responsive -->
+        <link rel="stylesheet" href="css/grille_slider.css">
+    </head>
+    <body>
+        <div class="conteneur">
+            <header class="row">
+                <!-- ranger les classes dans l'ordre de présentation des écrans (ex. du + petit au + grand) -->
+                <div class="marge-xsm col-xsm-12 col-10 marge-1">
+                    <h1>La Montagne</h1>
+                </div>
+            </header>
+            <section class="row">
+                <div class="col-xsm-12 col-sm-6 col-4">
+                    <h2>1/ Titre de niveau 2</h2>
+                    <p>1/ Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum quis temporibus molestias veritatis dicta consequatur sunt voluptates harum, expedita corporis ipsam, vel eligendi libero minima odit nulla omnis suscipit.</p>
+                </div>
+                <div class="col-xsm-12 col-sm-6 col-4 ">
+                    <h2>2/ Titre de niveau 2</h2>
+                    <p>2/ Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum quis temporibus molestias veritatis dicta consequatur sunt voluptates harum, expedita corporis ipsam, vel eligendi libero minima odit nulla omnis suscipit.</p>
+                </div>
+                <div class="col-xsm-12 col-sm-12 col-4 bleu">
+                    <h2>3/ Titre de niveau 2</h2>
+                    <p>3/ Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum quis temporibus molestias veritatis dicta consequatur sunt voluptates harum, expedita corporis ipsam, vel eligendi libero minima odit nulla omnis suscipit.</p>
+                </div>
+                <!-- fin section 1 avec 1 rangée -->
+            </section>
+            <section class="row">
+                <!-- rangée 2 -->
+                <div class="col-2">
+                    <p>1/ Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <!-- rangée 10 -->
+                <div class="col-10">
+                    <img src="img/1.jpg" alt="Montagne" id="Montagne">
+                    <!-- mon js pour le diaporama -->
+                    <script>
+                        var img = 0;
+                        function f() {
+                            img += 1;
+                            Montagne.setAttribute("src", "img/" + img + ".jpg");
+                            if (img == 4) {
+                                // clearInterval pour stopper le diapo si == 4
+                                //clearInterval(timer) // Le clearInterval permet de stopper setInterval
+                                img = 0;
+                            }
+                        }
+                        // var timer = window.setInterval('f()', 2000);
+                        window.setInterval('f()', 2000);
+
+                    </script>
+                </div>
+                <!-- fin section 2 -->
+            </section>
+
+            <footer class="row vert">
+                <div class="col-xsm-12 col-sm-6 col-4">
+                    <h3>1/ Footer gauche</h3>
+                    <address>
+                        Camille Dupond<br>
+                        5 av Jean Jaurès<br>
+                        93300 Pantin
+                    </address>
+                </div>
+                <div class="col-xsm-12 col-sm-6 col-8">
+                    <h3>2/ Footer droit</h3>
+                </div>
+            </footer>
+            <!-- fermeture conteneur -->
+        </div>
+    </body>
+</html>
